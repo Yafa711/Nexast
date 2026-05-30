@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">NexaShop</string>
+    <string name="title_activity_main">NexaShop</string>
+    <string name="package_name">com.nexatech.shopapp</string>
+    <string name="custom_url_scheme">com.nexatech.shopapp</string>
+</resources>
