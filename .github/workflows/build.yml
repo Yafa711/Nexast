@@ -16,6 +16,8 @@ jobs:
         run: npm install && npm run build
       - name: Sync Capacitor
         run: npx cap sync android
+      - name: Remove Termux AAPT2 override
+        run: sed -i '/aapt2FromMavenOverride/d' android/gradle.properties
       - name: Build APK
         run: cd android && chmod +x gradlew && ./gradlew assembleDebug
       - name: Upload APK
