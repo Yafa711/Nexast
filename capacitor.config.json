@@ -1,0 +1,10 @@
+{
+  "appId": "com.nexatech.shopapp",
+  "appName": "NexaShop",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}

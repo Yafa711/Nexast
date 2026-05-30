@@ -1,0 +1,20 @@
+{
+  "name": "nexashopapp",
+  "version": "1.0.0",
+  "description": "NexaShop - متجر إلكتروني",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/core": "latest",
+    "@capacitor/splash-screen": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest",
+    "vite": "^7.3.1"
+  }
+}
