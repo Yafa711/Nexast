@@ -5,7 +5,13 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: './index.html'
+      input: './index.html',
+      output: {
+        format: 'iife',
+        entryFileNames: 'js/bundle.js',
+        chunkFileNames: 'js/[name].js',
+        assetFileNames: 'css/[name][extname]'
+      }
     }
   }
 })
