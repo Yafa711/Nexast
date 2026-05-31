@@ -1,83 +1,73 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8"/>
-  <title>NexaShop</title>
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="theme-color" content="#1a1a2e"/>
-  <link rel="stylesheet" href="./css/style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8"/>
+<title>NexaShop</title>
+<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="theme-color" content="#1a1a2e"/>
+<link rel="stylesheet" href="./css/style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"/>
 </head>
 <body>
 <div id="login-screen" class="screen active">
-  <div class="auth-wrapper">
-    <div class="auth-logo">
-      <div class="logo-icon">🛍️</div>
-      <h1>NexaShop</h1>
-      <p>متجرك الإلكتروني المفضل</p>
-    </div>
-    <div class="auth-card">
-      <h2>تسجيل الدخول</h2>
-      <p class="subtitle">أدخل بياناتك للمتابعة</p>
-      <form id="login-form">
-        <div class="form-group">
-          <label>البريد الإلكتروني</label>
-          <input type="email" id="login-email" placeholder="example@email.com" required/>
-        </div>
-        <div class="form-group">
-          <label>كلمة المرور</label>
-          <input type="password" id="login-password" placeholder="••••••••" required/>
-        </div>
-        <div id="login-error" style="color:#e74c3c;font-size:13px;margin-bottom:8px;min-height:18px"></div>
-        <button type="submit" class="btn btn-primary">دخول ←</button>
-      </form>
-      <div class="auth-switch">ليس لديك حساب؟ <a onclick="goToRegister()">سجّل الآن</a></div>
-    </div>
-  </div>
+<div class="auth-wrapper">
+<div class="auth-logo">
+<div class="logo-icon">🛍️</div>
+<h1>NexaShop</h1>
+<p>متجرك الإلكتروني المفضل</p>
+</div>
+<div class="auth-card">
+<h2>تسجيل الدخول</h2>
+<p class="subtitle">أدخل بياناتك للمتابعة</p>
+<div class="form-group"><label>البريد الإلكتروني</label><input type="email" id="login-email" placeholder="example@email.com"/></div>
+<div class="form-group"><label>كلمة المرور</label><input type="password" id="login-password" placeholder="••••••••"/></div>
+<div id="login-error" style="color:#e74c3c;font-size:13px;margin-bottom:8px;min-height:18px"></div>
+<button class="btn btn-primary" onclick="handleLogin()">دخول ←</button>
+<div class="auth-switch" style="margin-top:16px">ليس لديك حساب؟ <a onclick="goToRegister()">سجّل الآن</a></div>
+</div>
+</div>
 </div>
 <div id="register-screen" class="screen">
-  <div class="auth-wrapper">
-    <div class="auth-logo">
-      <div class="logo-icon">✨</div>
-      <h1>حساب جديد</h1>
-      <p>انضم إلى NexaShop</p>
-    </div>
-    <div class="auth-card">
-      <h2>إنشاء حساب</h2>
-      <p class="subtitle">أدخل بياناتك لإنشاء حسابك</p>
-      <form id="register-form">
-        <div class="form-group"><label>الاسم الكامل</label><input type="text" id="reg-name" required/></div>
-        <div class="form-group"><label>البريد الإلكتروني</label><input type="email" id="reg-email" required/></div>
-        <div class="form-group"><label>كلمة المرور</label><input type="password" id="reg-password" required/></div>
-        <div class="form-group"><label>تأكيد كلمة المرور</label><input type="password" id="reg-confirm" required/></div>
-        <div id="register-error" style="color:#e74c3c;font-size:13px;margin-bottom:8px;min-height:18px"></div>
-        <button type="submit" class="btn btn-primary">إنشاء الحساب ✓</button>
-      </form>
-      <div class="auth-switch">لديك حساب؟ <a onclick="goToLogin()">تسجيل الدخول</a></div>
-    </div>
-  </div>
+<div class="auth-wrapper">
+<div class="auth-logo">
+<div class="logo-icon">✨</div>
+<h1>حساب جديد</h1>
+<p>انضم إلى NexaShop</p>
+</div>
+<div class="auth-card">
+<h2>إنشاء حساب</h2>
+<p class="subtitle">أدخل بياناتك لإنشاء حسابك</p>
+<div class="form-group"><label>الاسم الكامل</label><input type="text" id="reg-name" placeholder="اسمك الكامل"/></div>
+<div class="form-group"><label>البريد الإلكتروني</label><input type="email" id="reg-email" placeholder="example@email.com"/></div>
+<div class="form-group"><label>كلمة المرور</label><input type="password" id="reg-password" placeholder="6 أحرف على الأقل"/></div>
+<div class="form-group"><label>تأكيد كلمة المرور</label><input type="password" id="reg-confirm" placeholder="أعد كتابة كلمة المرور"/></div>
+<div id="register-error" style="color:#e74c3c;font-size:13px;margin-bottom:8px;min-height:18px"></div>
+<button class="btn btn-primary" onclick="handleRegister()">إنشاء الحساب ✓</button>
+<div class="auth-switch" style="margin-top:16px">لديك حساب؟ <a onclick="goToLogin()">تسجيل الدخول</a></div>
+</div>
+</div>
 </div>
 <div id="main-app" class="screen">
-  <header class="app-header" id="app-header"></header>
-  <div id="page-home" class="tab-page"></div>
-  <div id="page-shop" class="tab-page" style="display:none"></div>
-  <div id="page-local" class="tab-page" style="display:none"></div>
-  <div id="page-cart" class="tab-page" style="display:none"></div>
-  <div id="page-profile" class="tab-page" style="display:none"></div>
-  <nav class="bottom-nav">
-    <button class="nav-item active" data-tab="home" onclick="showTab('home')"><span class="nav-icon">🏠</span>الرئيسية</button>
-    <button class="nav-item" data-tab="shop" onclick="showTab('shop')"><span class="nav-icon">🛍️</span>المتجر</button>
-    <button class="nav-item" data-tab="local" onclick="showTab('local')"><span class="nav-icon">👘</span>محلي</button>
-    <button class="nav-item" data-tab="cart" onclick="showTab('cart')"><span class="nav-icon">🛒</span>السلة</button>
-    <button class="nav-item" data-tab="profile" onclick="showTab('profile')"><span class="nav-icon">👤</span>حسابي</button>
-  </nav>
+<header class="app-header" id="app-header"></header>
+<div id="page-home" class="tab-page"></div>
+<div id="page-shop" class="tab-page" style="display:none"></div>
+<div id="page-local" class="tab-page" style="display:none"></div>
+<div id="page-cart" class="tab-page" style="display:none"></div>
+<div id="page-profile" class="tab-page" style="display:none"></div>
+<nav class="bottom-nav">
+<button class="nav-item active" data-tab="home" onclick="showTab('home')"><span class="nav-icon">🏠</span>الرئيسية</button>
+<button class="nav-item" data-tab="shop" onclick="showTab('shop')"><span class="nav-icon">🛍️</span>المتجر</button>
+<button class="nav-item" data-tab="local" onclick="showTab('local')"><span class="nav-icon">👘</span>محلي</button>
+<button class="nav-item" data-tab="cart" onclick="showTab('cart')"><span class="nav-icon">🛒</span>السلة</button>
+<button class="nav-item" data-tab="profile" onclick="showTab('profile')"><span class="nav-icon">👤</span>حسابي</button>
+</nav>
 </div>
 <div id="product-screen" class="screen"><div id="page-product"></div></div>
 <div id="admin-screen" class="screen"><div id="admin-page"></div></div>
 <div id="checkout-modal" class="modal-overlay" onclick="if(event.target===this)closeModal('checkout-modal')"><div class="modal" id="checkout-modal-body"></div></div>
 <div id="product-modal" class="modal-overlay" onclick="if(event.target===this)closeModal('product-modal')"><div class="modal" id="product-modal-body"></div></div>
 <div class="toast" id="toast"></div>
-
-<script src="./js/bundle.js"></script>
+<script src="./js/db.js"></script>
+<script src="./js/app.js"></script>
 </body>
 </html>
