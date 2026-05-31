@@ -115,3 +115,17 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);dir
 .chart-bar-item{margin-bottom:14px}.chart-bar-label{display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:6px}
 .chart-bar-track{background:var(--border);border-radius:10px;height:10px;overflow:hidden}
 .chart-bar-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--gold));transition:width 0.8s ease}
+
+.bottom-nav {
+  padding-bottom: env(safe-area-inset-bottom, 16px) !important;
+  height: auto !important;
+}
+.nav-item {
+  padding: 8px 4px 6px !important;
+}
+.page-content {
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 16px)) !important;
+}
+body {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
