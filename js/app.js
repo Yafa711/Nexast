@@ -377,3 +377,24 @@ function showToast(msg) {
   t.classList.add('show');
   setTimeout(function() { t.classList.remove('show'); }, 2500);
 }
+
+// حفظ الجلسة بشكل دائم
+var _origSetCurrentUser = DB.setCurrentUser.bind(DB);
+DB.setCurrentUser = function(u) {
+  localStorage.setItem('nx_user_persist', JSON.stringify(u));
+  sessionStorage.setItem('nx_user', JSON.stringify(u));
+};
+var _origGetCurrentUser = DB.getCurrentUser.bind(DB);
+DB.getCurrentUser = function() {
+  var u = sessionStorage.getItem('nx_user');
+  if (!u || u === 'null') {
+    u = localStorage.getItem('nx_user_persist');
+    if (u && u !== 'null') sessionStorage.setItem('nx_user', u);
+  }
+  return u ? JSON.parse(u) : null;
+};
+var _origLogout = DB.logout.bind(DB);
+DB.logout = function() {
+  sessionStorage.removeItem('nx_user');
+  localStorage.removeItem('nx_user_persist');
+};

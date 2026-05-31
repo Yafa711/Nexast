@@ -129,3 +129,12 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);dir
 body {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
+
+#admin-screen .page-content,
+#admin-screen > div {
+  padding-bottom: calc(60px + env(safe-area-inset-bottom, 16px)) !important;
+}
+#admin-screen {
+  min-height: 100vh;
+  background: var(--bg);
+}
