@@ -5,8 +5,8 @@
   <title>NexaShop</title>
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <meta name="theme-color" content="#1a1a2e"/>
+  <link rel="stylesheet" href="./css/style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"/>
-  <script async type="module" crossorigin src="/js/bundle.js"></script>
 </head>
 <body>
 <div id="login-screen" class="screen active">
@@ -77,7 +77,7 @@
 <div id="checkout-modal" class="modal-overlay" onclick="if(event.target===this)closeModal('checkout-modal')"><div class="modal" id="checkout-modal-body"></div></div>
 <div id="product-modal" class="modal-overlay" onclick="if(event.target===this)closeModal('product-modal')"><div class="modal" id="product-modal-body"></div></div>
 <div class="toast" id="toast"></div>
-
-<script src="./js/bundle.js"></script>
+<script src="./js/db.js"></script>
+<script src="./js/app.js"></script>
 </body>
 </html>
